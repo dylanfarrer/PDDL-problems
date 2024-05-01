@@ -7,6 +7,8 @@ PDDL scenarios:
 - White-Black Puzzle (wb-pddl)
 - Warehouse Domain (ware-pddl)
 
+Additonal commentary in each pddl file
+
 To run a scenario:
 ```
 Download fast-downward and build it

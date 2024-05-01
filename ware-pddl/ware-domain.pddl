@@ -1,7 +1,7 @@
 (define (domain WARE)
 	(:requirements :adl :typing)
 	(:types location liftableObject - object
-			package crate - liftableObject)
+			package crate - liftableObject) ;object oriented
 	(:predicates
 		(truckAt ?x - location)
 		(objectAt ?x - liftableObject ?y - location)
@@ -14,16 +14,16 @@
 		:parameters (?x - location ?y - location)
 		:precondition (and
 			(truckAt ?x)
-			(truckSecured)
+			(truckSecured) ; truck must be secured to drive
 		)
 		:effect (and
 			(truckAt ?y)
-			(not (truckAt ?x))
+			(not (truckAt ?x)) ; delete old truckAt
 		)
 	)
 
 	(:action lift
-		:parameters (?x - location ?y - liftableObject)
+		:parameters (?x - location ?y - liftableObject) ; can take a crate or a package
 		:precondition (and
 			(truckSecured)
 			(truckAt ?x)

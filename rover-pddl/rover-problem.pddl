@@ -12,3 +12,14 @@
 	)
 	(:GOAL (AND (TRANSMITTED Br) (TRANSMITTED Er) (TRANSMITTED Dr) (TRANSMITTED Cr)))
 )
+
+;
+; The Robotic explorer (rover) problem file.
+; 	A B .. G are waypoints that the rover can visit
+;	Br, Er, Dr, Cr represent the rocks at the correspoding waypoints the rover must analyse.
+;
+; Inital state:
+;	The rover is at G, the rocks are placed at their locations, the transmit connection is set to A,
+;	The paths between waypoints are set.
+;
+;The goal is for every rock analysis to be transmitted.

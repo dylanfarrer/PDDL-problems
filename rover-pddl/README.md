@@ -1,0 +1,3 @@
+# Description 
+
+There are several waypoints on a planet, some of which are connected. The explorer can navigate between two waypoints if they are connected. Interesting rocks can be found at any waypoint. The explorer can only analyse the rocks of a waypoint when the explorer is at that waypoint. After the explorer has analysed a rock sample, it can transmit the results of the analysis to Earth. However, the transmission of the results of the analysed rock samples can only be carried out at certain waypoints where the connection towards Earth is good. Note that each result needs to be transferred via an individual action. All actions have unit costs.

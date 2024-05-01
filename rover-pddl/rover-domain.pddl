@@ -1,13 +1,13 @@
 (define (domain ROVER)
 	(:requirements :adl :typing)
-	(:types waypoint rock - object)
+	(:types waypoint rock - object) ; object oriented
 	(:predicates
 		(roverAt ?x - waypoint)
 		(rockAt ?x - rock ?y - waypoint)
-		(resultCollectedAbout ?x - rock)
-		(connectionAt ?x - waypoint)
-		(connected ?x - waypoint ?y - waypoint)
-		(transmitted ?x - rock)
+		(resultCollectedAbout ?x - rock) ; indicates a rock has been analysed
+		(connectionAt ?x - waypoint) ; place that info can be transmitted from
+		(connected ?x - waypoint ?y - waypoint) ; available paths
+		(transmitted ?x - rock) ; has info been transmitted about this rock
 	)
 
 	(:action move-rover
@@ -27,7 +27,7 @@
 		:precondition (and
 			(roverAt ?x)
 			(rockAt ?y ?x)
-			(not (resultCollectedAbout ?y))
+			(not (resultCollectedAbout ?y)) ; can only analyse once
 		)
 		:effect (and
 			(resultCollectedAbout ?y)
@@ -39,11 +39,12 @@
 		:precondition (and
 			(roverAt ?x)
 			(connectionAt ?x)
-			(resultCollectedAbout ?y)
-			(not (transmitted ?y))
+			(resultCollectedAbout ?y) ; can only transmit if analysed
+			(not (transmitted ?y)) ; can only transmit once
 		)
 		:effect (and
 			(transmitted ?y)
 		)
 	)
 )
+
